@@ -191,3 +191,38 @@ def check_dataset(data_root):
             "->",
             problem
         )
+
+
+def count_samples_by_gesture(samples):
+
+    gesture_counts = {}
+
+    for sample in samples:
+        gesture = sample["gesture"]
+
+        if gesture not in gesture_counts:
+            gesture_counts[gesture] = 0
+
+        gesture_counts[gesture] += 1
+
+    return gesture_counts
+
+
+def count_samples_by_person_and_gesture(samples):
+
+    counts = {}
+
+    for sample in samples:
+
+        person = sample["person"]
+        gesture = sample["gesture"]
+
+        if person not in counts:
+            counts[person] = {}
+
+        if gesture not in counts[person]:
+            counts[person][gesture] = 0
+
+        counts[person][gesture] += 1
+
+    return counts

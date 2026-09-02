@@ -1,1 +1,0 @@
-HandLandmarkerResult(handedness=[], hand_landmarks=[], hand_world_landmarks=[])
